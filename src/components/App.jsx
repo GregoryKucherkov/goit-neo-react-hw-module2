@@ -37,6 +37,10 @@ const App = () => {
     });
   };
 
+  const onReset = () => {
+    setState(startState);
+  };
+
   //saving state to localStorage
   useEffect(() => {
     localStorage.setItem("savedState", JSON.stringify(state));
@@ -47,8 +51,7 @@ const App = () => {
       <Description />
       <Options
         updateFeedback={updateFeedback}
-        setState={setState}
-        startState={startState}
+        onReset={onReset}
         total={total}
       />
       {total > 0 ? (
